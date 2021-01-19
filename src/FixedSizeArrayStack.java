@@ -46,7 +46,7 @@ public class FixedSizeArrayStack {
                 s=s+","+ stackRep[i];
             }
         }
-        return s + "]";
+        return s + "] ";
     }
 
     public static void main(String[] args) throws Exception {
