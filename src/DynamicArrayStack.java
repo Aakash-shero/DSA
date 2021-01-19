@@ -65,7 +65,7 @@ public class DynamicArrayStack {
 
     public int pop() throws Exception{
         int data;
-        if(isEmpty()) throw new Exception("Stack is Empty");
+        if(isEmpty()) throw new Exception("Stack is Empty ");
         data = stackRep[top];
         stackRep[top--] = Integer.MIN_VALUE;
         shrink();
