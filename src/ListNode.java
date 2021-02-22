@@ -1,6 +1,6 @@
 public class ListNode {
-    private int data;
-    private ListNode next;
+    public int data;
+    public ListNode next;
 
     public ListNode(int data){
         this.data =data;
@@ -35,6 +35,11 @@ public class ListNode {
     }
 
     public static void main(String[] args) {
-        System.out.println();
+        ListNode node = new ListNode(5);
+        ListNode node2 = new ListNode(6);
+        node.setNext(node2);
+        ListNode myData = node.getNext();
+        int l= node.length(node);
+        System.out.println(l);
     }
 }
