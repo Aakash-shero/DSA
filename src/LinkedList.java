@@ -69,7 +69,53 @@ public class LinkedList {
         length++;
     }
 
-    //Removing a node from starting of the list
+    //Remove and Return the node at the head of the list
+    public synchronized ListNode removeFromBegin(){
+        ListNode node = head;
+        if(node!=null){
+            head=node.next;
+            node.next=null;
+        }
+        return node;
+    }
+
+    //Removing a node from End of the list
+    public synchronized ListNode removeFromEnd(){
+        if(head==null)
+            return null;
+        ListNode p = head, q = null, next=head.next;
+        if(next==null){
+            head=null;
+            return p;
+        }
+        while((next=p.next)!=null){
+            q=p;
+            p=next;
+        }
+        q.next=null;
+        return p;
+    }
+    //Remove a node matching the specified node from the list.
+    //Use equals() instead of == to test for a matched node.
+
+    public synchronized void removeMatched(ListNode node){
+        if(head==null){
+            return;
+        }
+        if(node.equals(head)){
+            head=head.next;
+            return;
+        }
+        ListNode p=head, q=null;
+        while((q=p.next)!=null){
+            if(node.equals(q)){
+                p.next=q.next;
+                return;
+            }
+            p=q;
+        }
+    }
+
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
